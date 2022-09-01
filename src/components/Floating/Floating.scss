@@ -1,0 +1,16 @@
+.floatingWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  background-color: #c2a83e;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  transition: 0.2s all;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

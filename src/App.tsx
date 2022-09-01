@@ -1,8 +1,21 @@
-import React from "react";
-import "./App.css";
+import './App.scss'
+import { Floating } from './components/Floating'
+import { PlusIcon } from './components/Icons'
 
-function App() {
-  return <div className="App"></div>;
+const FloatingWrapper = () => {
+  return (
+    <div className="container" style={{ backgroundColor: 'lightgray' }}>
+      <Floating Icon={<PlusIcon />} />
+    </div>
+  )
 }
 
-export default App;
+function App() {
+  return (
+    <div className="App">
+      <FloatingWrapper />
+    </div>
+  )
+}
+
+export default App
