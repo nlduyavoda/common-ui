@@ -7,10 +7,151 @@
   border-radius: 100%;
   background-color: #c2a83e;
   position: fixed;
-  bottom: 5%;
-  right: 5%;
-  transition: 0.2s all;
+  bottom: 10%;
+  right: 10%;
+  border: none;
+  transition: 1.5s all;
+  position: absolute;
+
   &:hover {
     transform: scale(1.1);
   }
+
+  button {
+    height: 2px;
+    width: 150px;
+    position: absolute;
+    border: none;
+    background: transparent;
+    transition: 1.5s all;
+  
+    &.item2::before {
+      background-color: red;
+    }
+    &.item3::before {
+      background-color: yellow;
+    }
+    &.item4::before {
+      background-color: purple;
+    }
+    &::before {
+      content: "";
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      transform: rotate(0deg);
+      transform-origin: right;
+      left: 0%;
+      bottom: 50%;
+      transform: translateY(50%);
+      border-radius: 100%;
+      background-color: green;
+      transition: 1.5s all;
+    }
+  }
+  
+  &.active {
+    & button {
+      &.item1 {
+        animation: identifier1 0.5s forwards;
+      }
+      &.item2 {
+        animation: identifier2 0.5s forwards;
+      }
+      &.item3 {
+        animation: identifier3 0.5s forwards;
+      }
+      &.item4 {
+        animation: identifier4 0.5s forwards;
+      }
+    }
+  }
+  
+  &.reverse {
+    & button {
+      &.item1 {
+        animation: reverse1 0.5s forwards;
+      }
+      &.item2 {
+        animation: reverse2 0.5s forwards;
+      }
+      &.item3 {
+        animation: reverse3 0.5s forwards;
+      }
+      &.item4 {
+        animation: reverse4 0.5s forwards;
+      }
+    }
+  }
+  
+  @keyframes identifier1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  @keyframes identifier2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+  
+  @keyframes identifier3 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes identifier4 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+  
+  @keyframes reverse1 {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes reverse2 {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes reverse3 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes reverse4 {
+    0% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
 }
