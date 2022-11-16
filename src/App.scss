@@ -4,11 +4,13 @@
   transition: 0.5s all;
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  & .testItem {
-      height: 100px;
-      width: 100px;
-      background-color: red;
-      margin-bottom: 20px;
-    }
+  & .containerX {
+    background-color: lightblue;
+    display: flex;
+    justify-content: end;
+    box-sizing: border-box;
+    padding: 20px;
+  }
 }
