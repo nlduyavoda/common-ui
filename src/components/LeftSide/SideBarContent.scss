@@ -1,0 +1,83 @@
+.sideBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 10%;
+  min-width: 10%; // important
+  background-color: #FFFFFF;
+  transition: all 0.1s;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+  transform-origin: left;
+  position: relative;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 50%) 0px 1px 4px;
+  .toggle-icon-wrapper {
+    justify-content: center;
+    & div:nth-child(1) {
+      transition: 0.1s;
+      opacity: 0;
+      width: 0;
+      pointer-events: none;
+    }
+    
+  }
+  &.minimize {
+    width: 20%;
+    min-width: 20%;
+
+    .toggle-icon-wrapper {
+      & div:nth-child(1) {
+        opacity: 1;
+        width: 100%;
+        pointer-events: unset;
+      }
+      & > :nth-child(2) {
+        display: flex;
+      }
+    }
+  }
+
+  &.extends {
+    width: 40%;
+    min-width: 40%;
+
+    .toggle-icon-wrapper {
+      & div:nth-child(1) {
+        opacity: 1;
+        width: 100%;
+        pointer-events: unset;
+        transform: translateX(50%);
+      }
+      & div:nth-child(2) {
+        opacity: 0;
+        width: 0;
+        pointer-events: none;
+      }
+    }
+  }
+  & .sidebar-arrow-icon {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 10px;
+    background: lightcyan;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.toggle-icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  width: 100%;
+  padding: 0 10px 0 10px;
+
+  & div:nth-child(1) {
+    opacity: 1;
+    width: 100%;
+  }
+}
