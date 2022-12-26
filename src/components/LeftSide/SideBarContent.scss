@@ -1,6 +1,5 @@
 .sideBar {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   height: 100%;
   width: 10%;
@@ -69,6 +68,12 @@
     align-items: center;
   }
 }
+
+.options-wrapper{
+  max-height: 95%;
+  overflow: auto;
+}
+
 .toggle-icon-wrapper {
   display: flex;
   justify-content: space-between;

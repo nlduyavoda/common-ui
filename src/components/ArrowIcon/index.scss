@@ -1,0 +1,93 @@
+button {
+    margin-top: 40px;
+  }
+  
+  .arrowIcon {
+    height: 10px;
+    width: 20px;
+    display: flex;
+    position: relative;
+  }
+  
+  .arrowIcon::before {
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 50%;
+    border-radius: 10px;
+    background-color: black;
+    animation: keydown 0.3s forwards;
+    top: calc(50% - 1px);
+    left: 37%;
+    transform-origin: center;
+  }
+  
+  .arrowIcon.active::before {
+    animation: keyup 0.3s forwards;
+  }
+  
+  .arrowIcon::after {
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 50%;
+    border-radius: 10px;
+    background-color: black;
+    animation: keyup2 0.3s forwards;
+    top: calc(50% - 1px);
+    right: 37%;
+    transform-origin: center;
+  }
+  
+  .arrowIcon.active::after {
+    animation: keydown2 0.3s forwards;
+  }
+  
+  @keyframes keydown {
+    0% {
+      width: 70%;
+      transform: rotate(-45deg);
+    }
+  
+    100% {
+      width: 70%;
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes keyup {
+    0% {
+      width: 70%;
+      transform: rotate(45deg);
+    }
+  
+    100% {
+      width: 70%;
+      transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes keydown2 {
+    0% {
+      width: 70%;
+      transform: rotate(-45deg);
+    }
+  
+    100% {
+      width: 70%;
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes keyup2 {
+    0% {
+      width: 70%;
+      transform: rotate(45deg);
+    }
+  
+    100% {
+      width: 70%;
+      transform: rotate(-45deg);
+    }
+  }
+  

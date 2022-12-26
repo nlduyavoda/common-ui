@@ -21,7 +21,7 @@ enum navSize {
 
 export const SideBarContent = forwardRef<HTMLDivElement, InputProps>(
   (_, ref) => {
-    const [state, setState] = useState<string>()
+    const [state, setState] = useState<'extends' | 'minimize' | ''>()
     const classes = classNames('sideBar', state)
     const handleToggle = () => {
       if (state === MINI_CLASS) {
@@ -31,11 +31,29 @@ export const SideBarContent = forwardRef<HTMLDivElement, InputProps>(
     }
     return (
       <div className={classes} ref={ref}>
-        <Options
-          label="Selector-1"
-          options={optionsDefaultValues}
-          state={state}
-        />
+        <div className="options-wrapper" style={{ width: '100%' }}>
+          <Options
+            label="Selector-1"
+            options={optionsDefaultValues}
+            state={!!state}
+          />
+          <Options
+            label="Selector-2"
+            options={optionsDefaultValues}
+            state={!!state}
+          />
+          <Options
+            label="Selector-3"
+            options={optionsDefaultValues}
+            state={!!state}
+          />
+          <Options
+            label="Selector-4"
+            options={optionsDefaultValues}
+            state={!!state}
+          />
+        </div>
+
         <div className="toggle-icon-wrapper">
           <div onClick={() => setState('')}>
             <LeftIcon color={DEEP_PINK} height="2rem" width="2rem" />

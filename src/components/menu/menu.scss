@@ -25,7 +25,6 @@ svg {
 
   & .header {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     max-width: 100%;
     height: 50px;
@@ -36,14 +35,11 @@ svg {
     margin-bottom: 5px;
     cursor: pointer;
     overflow: hidden;
-
-    & :nth-child(2) {
-      display: none;
-    }
-
+    
     & > div {
+      padding-right: 20px;
       display: flex;
-      justify-content: center;
+      justify-content: end;
       align-items: center;
       height: 100%;
       width: 100%;
