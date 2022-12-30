@@ -1,6 +1,5 @@
 import classNames from 'classnames'
-import { forwardRef, HtmlHTMLAttributes } from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { forwardRef, useRef, useState } from 'react'
 import { ArrowIcon } from '../ArrowIcon'
 import './menu.scss'
 import Option from './option'
@@ -12,32 +11,21 @@ const MODAL = {
   fade: 'modalFade'
 }
 
-type TypeLeftSide = '' | 'minimize' | 'extends'
-
 const Options = ({ ...props }) => {
   const ref = useRef(null)
-  const [state, setState] = useState(false)
+
+  const [optHeader, setHeader] = useState(false)
   const optionsClasses = classNames(MODAL.default, {
-    [`${MODAL.fade}`]: !state
+    [`${MODAL.fade}`]: false
   })
-
   const handleToggle = () => {
-    if (props.state) {
-      toggleModal(ref, state)
-      setState(!state)
-    }
+    toggleModal(ref, optHeader)
+    setHeader(!optHeader)
   }
-
-  useEffect(() => {
-    if (!props.state) {
-      toggleModal(ref, false)
-      setState(false)
-    }
-  }, [ref, state, props])
 
   return (
     <div className="modal">
-      <Header onChange={handleToggle} props={props} state={state} />
+      <Header onChange={handleToggle} state={optHeader} />
       <OptionsContent
         ref={ref}
         classes={optionsClasses}
@@ -52,14 +40,15 @@ const Options = ({ ...props }) => {
   )
 }
 
-const Header = ({ onChange, props, state }: any) => {
+const Header = ({ onChange, state = false }: any) => {
   return (
     <div className="header" onClick={onChange}>
       <div className="label"></div>
-      {props.state && <ArrowIcon state={state} />}
+      <ArrowIcon state={state} />
     </div>
   )
 }
+
 const OptionsContent = forwardRef<any, any>(
   // const OptionsContent = forwardRef<HtmlHTMLAttributes<HTMLDivElement>, any>(
   ({ ...props }, ref) => {

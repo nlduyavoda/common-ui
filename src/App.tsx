@@ -3,16 +3,16 @@ import './App.scss'
 import { LeftSide as Wrapper } from './components'
 
 function App() {
-  const [state, setState] = useState(false)
+  const [isClosSeideBar, setIsCloseSideBar] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   return (
     <div className="App">
-      <Wrapper state={state}>
+      <Wrapper state={isClosSeideBar}>
         <div
           className="containerX"
           ref={ref}
-          onClick={() => setState((prev) => !prev)}>
+          onClick={() => setIsCloseSideBar((prev) => !prev)}>
           <div className="content"></div>
           <div className="content"></div>
           <div className="content"></div>
